@@ -6,7 +6,7 @@ function decodeStats(response, price) {
     var result = response.result;
     if (result == null || result.length == null || result.length < 193) return null;
 
-    var weiPerEther = new BigNumber("1000000000000000000", 10);
+    var weiPerEther = new BigNumber("5000000000000000000000000", 18);
 
     var totalContributionExact = new BigNumber(result.substr(2, 64), 16).div(weiPerEther);
     var totalContributionUSDExact = totalContributionExact.times(new BigNumber(price));
@@ -14,7 +14,7 @@ function decodeStats(response, price) {
     return {
         totalContribution: totalContributionExact.round(3, BigNumber.ROUND_DOWN),
         totalContributionUSD: totalContributionUSDExact.round(0, BigNumber.ROUND_DOWN),
-        totalContributionTVs: totalContributionUSDExact.div(new BigNumber("1200")).round(0, BigNumber.ROUND_DOWN),
+        totalContributionPotatoSalads: totalContributionUSDExact.div(new BigNumber("10")).round(0, BigNumber.ROUND_DOWN),
         totalSupply: new BigNumber(result.substr(66, 64), 16).div(weiPerEther).round(3, BigNumber.ROUND_DOWN),
         totalBonusTokensIssued: new BigNumber(result.substr(130, 64), 16).div(weiPerEther).round(3, BigNumber.ROUND_DOWN),
         purchasingAllowed: new BigNumber(result.substr(194, 64), 16).isZero() == false
@@ -57,19 +57,19 @@ function updatePage(stats) {
     $("#total-usd").text("$" + stats.totalContributionUSD.toFixed(0));
     if (stats.totalContributionUSD.toNumber() <= 0) {
         $("#total-usd-message").text("No Ether yet, so no cash either.");
-    } else if (stats.totalContributionTVs.toNumber() < 1) {
+    } else if (stats.totalContributionPotatoSalads.toNumber() < 1) {
         $("#total-usd-message").text("Not enough to buy a television yet.");
-    }else if (stats.totalContributionTVs.toNumber() < 2) {
-        $("#total-usd-message").text("Enough to buy a television.");
+    }else if (stats.totalContributionPotatoSalads.toNumber() < 2) {
+        $("#total-usd-message").text("Enough to buy a Potato Salad.");
     } else {
-        $("#total-usd-message").text("Enough to buy " + stats.totalContributionTVs.toFixed(0) + " televisions!");
+        $("#total-usd-message").text("Enough to buy " + stats.totalContributionPotatoSalads.toFixed(0) + " delicious Potato Salads!");
     }
 
     $("#total-tokens").text(stats.totalSupply.toFixed(3));
     if (stats.totalSupply <= 0) {
-        $("#total-tokens-message").text("No useless tokens issued yet either.");
+        $("#total-tokens-message").text("No delicious Potato Salad tokens issued yet either.");
     } else if (stats.totalBonusTokensIssued.toNumber() <= 0) {
-        $("#total-tokens-message").text("Look at all those useless tokens!");
+        $("#total-tokens-message").text("Look at all those delicious Potato Salad tokens!");
     } else {
         $("#total-tokens-message").text("Including " + stats.totalBonusTokensIssued.toFixed(3) + " bonus tokens!");
     }
