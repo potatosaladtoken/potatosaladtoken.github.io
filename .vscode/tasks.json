@@ -5,6 +5,6 @@
         "cwd": "C:\\Users\\potatosaladtoken\\Source\\bootstrap"
     },
     "isShellCommand": true,
-    "args": ["-command", "grunt dist ; cp .\\dist\\css\\bootstrap.min.css ..\\pstk.github.io\\bootstrap-potatosaladtoken.css ; cp .\\dist\\js\\bootstrap.min.js ..\\uetoken.github.io\\bootstrap-potatosaladtoken.js"],
+    "args": ["-command", "grunt dist ; cp .\\dist\\css\\bootstrap.min.css ..\\pstk.github.io\\bootstrap-potatosaladtoken.css ; cp .\\dist\\js\\bootstrap.min.js ..\\pstk.github.io\\bootstrap-potatosaladtoken.js"],
     "showOutput": "always"
 }
