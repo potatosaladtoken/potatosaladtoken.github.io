@@ -41,6 +41,99 @@
     <meta name="msapplication-square310x310logo" content="/images/mstile-310x310.png" />
 
     <!-- jfc how many icons can a website HAVE? -->
+
+    <!-- So I put CSS in the main code, So what? You wanna fight about it? -->
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
 </head>
 
 <body data-spy="scroll" data-target="#navbar" class="bg-faded">
@@ -145,14 +238,14 @@
                         <hr class="my-4" />
             <div class="row">
                 <div class="col-lg-4">
-                    <p class="h1">Assured token value</p>
+                    <p class="h1">Token value</p>
                 </div>
                 <div class="col-md-12 col-lg-8">
                     <p>
-                        You are probably worried about value, well I've got news for you! Unlike most ICO's, these tokens aren't worth anything to start with, so there's nowhere to go but up! Buy tokens, add value! 
-                        It's that easy!
+                        You are probably concerned about value, well I've got news for you! Unlike most ICO's, these tokens <em>aren't worth anything</em> to start with, so there's nowhere to go but up! Buy tokens, add value! 
+                        It's that easy! Here's a graph of worthless coins that increased in value too through some stroke of good luck, dumb luck or are powered by magical unicorn droppings-
 
-                       *Insert a Bar graph of worthless coins that have increased in value*
+                       *Insert a Bar graphs of worthless coins that have increased in value* Meme: So you're telling me there's a chance?
 
                     </p>
                         <p><center>(But don't mistakenly <em>expect</em> this token to increase in value, either.)</center></p>
@@ -162,7 +255,7 @@
             <hr class="my-4" />
             <div class="row">
                 <div class="col-lg-4">
-                    <p class="h1">Probably secure, not audited</p>
+                    <p class="h1">Security n' stuff</p>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <p>
