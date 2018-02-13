@@ -54,6 +54,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 #myImg:hover {opacity: 0.7;}
 
+ /* Style the Image Used to Trigger the Modal */
+.myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.myImg:hover {opacity: 0.7;}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -69,7 +78,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
-/* Modal Content (image) */
+/* Modal Content (Image) */
 .modal-content {
     margin: auto;
     display: block;
@@ -77,7 +86,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     max-width: 700px;
 }
 
-/* Caption of Modal Image */
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
 #caption {
     margin: auto;
     display: block;
@@ -89,8 +98,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
     height: 150px;
 }
 
-/* Add Animation */
-.modal-content, #caption {    
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
@@ -98,12 +107,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
+    from {-webkit-transform:scale(0)}
     to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
-    from {transform:scale(0)} 
+    from {transform:scale(0)}
     to {transform:scale(1)}
 }
 
@@ -132,8 +141,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
     }
 }
 </style>
-</head>
-<body>
 </head>
 
 <body data-spy="scroll" data-target="#navbar" class="bg-faded">
@@ -246,6 +253,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         It's that easy! Here's a graph of worthless coins that increased in value too through some stroke of good luck, dumb luck or are powered by magical unicorn droppings-
 
                        *Insert a Bar graphs of worthless coins that have increased in value* Meme: So you're telling me there's a chance?
+                       <center><img class="myImg" src="http://www.chinabuddhismencyclopedia.com/en/images/thumb/b/b8/Nature.jpg/240px-Nature.jpg" alt="Trolltunga, Norway" width="300" height="200"></center>
 
                     </p>
                         <p><center>(But don't mistakenly <em>expect</em> this token to increase in value, either.)</center></p>
@@ -555,6 +563,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
             </p>
         </div>
     </footer>
+
+<!-- The Modal For image Manipulation -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
 
     <script type="text/javascript" src="/jquery.js"></script>
     <script type="text/javascript" src="/tether.js"></script>
