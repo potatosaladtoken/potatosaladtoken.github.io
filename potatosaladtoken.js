@@ -58,9 +58,9 @@ function updatePage(stats) {
     if (stats.totalContributionUSD.toNumber() <= 0) {
         $("#total-usd-message").text("No Ether yet, so no cash either.");
     } else if (stats.totalContributionPotatoSalads.toNumber() < 1) {
-        $("#total-usd-message").text("Not enough to buy a television yet.");
+        $("#total-usd-message").text("Not enough to buy a Potato Salad yet.");
     }else if (stats.totalContributionPotatoSalads.toNumber() < 2) {
-        $("#total-usd-message").text("Enough to buy a Potato Salad.");
+        $("#total-usd-message").text("Enough to buy a Potato Salad at Costco.");
     } else {
         $("#total-usd-message").text("Enough to buy " + stats.totalContributionPotatoSalads.toFixed(0) + " delicious Potato Salads!");
     }
